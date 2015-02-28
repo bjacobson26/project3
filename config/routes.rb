@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :product_images 
   end
 
+  resources :categories
+
 
   root 'pages#home'
 
