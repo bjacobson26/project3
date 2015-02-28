@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  get 'pages/home'
 
-  get 'sessions/new'
-=======
   resources :users #, only: [:index, :new, :create, :show, :edit]
   resources :orders
   resources :order_details
@@ -13,7 +9,7 @@ Rails.application.routes.draw do
   resources :products do 
     resources :product_images 
   end
->>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
+
 
   root 'pages#home'
 
@@ -59,9 +55,7 @@ Rails.application.routes.draw do
 
 #  get 'users/index'
 
-<<<<<<< HEAD
 
-=======
 #  get 'users/new'
 
 #  get 'users/show'
@@ -69,16 +63,14 @@ Rails.application.routes.draw do
 #  get 'users/edit'
 
   
->>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-<<<<<<< HEAD
-  root 'pages#home'
-=======
+
   
->>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
