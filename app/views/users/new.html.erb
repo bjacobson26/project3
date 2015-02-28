@@ -1,19 +1,17 @@
-<h1>Sign up!</h1>
-
-<%= form_for @user do |f| %>
-	First Name: <%= f.text_field :first_name, :placeholder => "Enter your first name" %><br />
-	
-	Last Name: <%= f.text_field :last_name, :placeholder => "Enter your last name" %><br />
-	
-	Email: <%= f.text_field :email, :placeholder => "Enter your email" %><br />
-	
-	Password: <%= f.password_field :password, :placeholder => "Enter your password" %><br />
-	
-	Password Confirmation: <%= f.password_field :password_confirmation, :placeholder => "Confirm your password" %><br />
-
-	<%= f.submit %>
-
-<% end %>
+<h1 class="title"><img class="logo" src="../assets/Logo.psd.png"></h1>
+<div class="signup">
+	<%= form_for @user do |f| %>
+		<%= f.text_field :first_name, :placeholder => "First name", :class => 'textfield' %><br />
+			
+		<%= f.text_field :last_name, :placeholder => "Last name", :class => 'textfield' %><br />
+			
+		<%= f.text_field :email, :placeholder => "Email", :class => 'textfield' %><br />
+		<%= f.password_field :password, :placeholder => "Password", :class => 'textfield' %><br />
+		<%= f.password_field :password_confirmation, :placeholder => "Confirm password", :class => 'textfield' %><br />
+		<br>
+		<%= f.submit 'Sign up' %>
+	<% end %>
+</div>
 
 
 
@@ -34,5 +32,11 @@
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<p>Users#new</p>
+<p>Find me in Users#new</p>
+<%= link_to 'Home', root_path %>
