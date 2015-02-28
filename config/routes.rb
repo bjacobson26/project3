@@ -1,58 +1,70 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  resources :users #, only: [:index, :new, :create, :show, :edit]
+  resources :orders
+  resources :order_details
+  resources :pages
+  resource :sessions, only: [:new, :create, :destroy]
+  # Establish a nested route with product_images inside of products
+  resources :products do 
+    resources :product_images 
+  end
 
-  get 'sessions/new'
+  root 'pages#home'
 
-  get 'orders/index'
+# get 'pages/home'
 
-  get 'orders/new'
+#  get 'sessions/new'
 
-  get 'orders/show'
+#  get 'orders/index'
 
-  get 'orders/edit'
+#  get 'orders/new'
 
-  get 'product_images/index'
+#  get 'orders/show'
 
-  get 'product_images/new'
+#  get 'orders/edit'
 
-  get 'product_images/show'
+#  get 'product_images/index'
 
-  get 'product_images/edit'
+#  get 'product_images/new'
 
-  get 'products/index'
+#  get 'product_images/show'
 
-  get 'products/new'
+#  get 'product_images/edit'
 
-  get 'products/show'
+#  get 'products/index'
 
-  get 'products/edit'
+#  get 'products/new'
 
-  get 'order_details/new'
+#  get 'products/show'
 
-  get 'order_details/show'
+#  get 'products/edit'
 
-  get 'order_details/edit'
+#  get 'order_details/new'
 
-  get 'categories/new'
+#  get 'order_details/show'
 
-  get 'categories/show'
+#  get 'order_details/edit'
 
-  get 'categories/edit'
+#  get 'categories/new'
 
-  get 'users/index'
+#  get 'categories/show'
 
-  get 'users/new'
+#  get 'categories/edit'
 
-  get 'users/show'
+#  get 'users/index'
 
-  get 'users/edit'
+#  get 'users/new'
 
+#  get 'users/show'
 
+#  get 'users/edit'
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#home'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
