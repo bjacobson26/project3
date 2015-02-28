@@ -1,58 +1,84 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'pages/home'
 
   get 'sessions/new'
+=======
+  resources :users #, only: [:index, :new, :create, :show, :edit]
+  resources :orders
+  resources :order_details
+  resources :pages
+  resource :sessions, only: [:new, :create, :destroy]
+  # Establish a nested route with product_images inside of products
+  resources :products do 
+    resources :product_images 
+  end
+>>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
 
-  get 'orders/index'
+  root 'pages#home'
 
-  get 'orders/new'
+# get 'pages/home'
 
-  get 'orders/show'
+#  get 'sessions/new'
 
-  get 'orders/edit'
+#  get 'orders/index'
 
-  get 'product_images/index'
+#  get 'orders/new'
 
-  get 'product_images/new'
+#  get 'orders/show'
 
-  get 'product_images/show'
+#  get 'orders/edit'
 
-  get 'product_images/edit'
+#  get 'product_images/index'
 
-  get 'products/index'
+#  get 'product_images/new'
 
-  get 'products/new'
+#  get 'product_images/show'
 
-  get 'products/show'
+#  get 'product_images/edit'
 
-  get 'products/edit'
+#  get 'products/index'
 
-  get 'order_details/new'
+#  get 'products/new'
 
-  get 'order_details/show'
+#  get 'products/show'
 
-  get 'order_details/edit'
+#  get 'products/edit'
 
-  get 'categories/new'
+#  get 'order_details/new'
 
-  get 'categories/show'
+#  get 'order_details/show'
 
-  get 'categories/edit'
+#  get 'order_details/edit'
 
-  get 'users/index'
+#  get 'categories/new'
 
-  get 'users/new'
+#  get 'categories/show'
 
-  get 'users/show'
+#  get 'categories/edit'
 
-  get 'users/edit'
+#  get 'users/index'
 
+<<<<<<< HEAD
 
+=======
+#  get 'users/new'
+
+#  get 'users/show'
+
+#  get 'users/edit'
+
+  
+>>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+<<<<<<< HEAD
   root 'pages#home'
+=======
+  
+>>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

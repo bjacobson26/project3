@@ -1,3 +1,48 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+<<<<<<< HEAD
+=======
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC);
+$mainfont:'IM Fell French Canon SC', serif;
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+    max-height:500px;
+}
+
+.carousel {
+	height: 50%;
+}
+
+.title {
+	text-align:center;
+	font-family: $mainfont
+}
+
+.title:hover{
+	text-decoration:underline;
+}
+
+.navbar{
+	font-family:$mainfont;
+}
+
+.homeproducts {
+	position:relative;
+	height:400px;
+	width:100%;
+	font-family:$mainfont
+}
+
+.logo{
+	display:block;
+	margin: auto;
+	max-width:100%;
+}
+
+#footer {
+  height: 60px;
+  background-color: black;
+}
+>>>>>>> 6862ca003ad9270d4a187619db9c8830bf398187
