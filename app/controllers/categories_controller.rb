@@ -6,7 +6,10 @@ class CategoriesController < ApplicationController
   def new
   end
 
-  def show
+  def show	
+    @furnishings = Category.where(:id == 1)
+    @paintings = Category.where(:id == 2)
+    @sculptures = Category.where(:id == 3)
   end
 
   def edit
