@@ -15,13 +15,18 @@ $mainfont:'IM Fell French Canon SC', serif;
 }
 
 .title {
+	display:block;
 	text-align:center;
-	font-family: $mainfont
+	font-family: $mainfont;
+	color:black;
+	font-size: 40px;
 }
 
 .title:hover{
 	text-decoration:underline;
+	color:black;
 }
+
 
 .navbar{
 	font-family:$mainfont;

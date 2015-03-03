@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  get '/admin' => 'pages#admin'
+
+
+  get '/categories/furnishings', to: 'categories#show', as: 'furnishings'
+  get '/categories/paintings', to: 'categories#show', as: 'paintings'
+  get '/categories/sculptures', to: 'categories#show', as: 'sculptures'
+
 
   root 'pages#home'
 

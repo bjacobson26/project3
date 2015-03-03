@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   	  user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
   	  if user.save
   	  	  session["user_id"] = user.id.to_s
-  	  	  redirect_to user
+  	  	  redirect_to root_path
   	  	else 
   	  		render 'new'
   	  end
@@ -39,4 +39,8 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  def admin
+  end
 end
+

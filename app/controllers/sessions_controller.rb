@@ -14,15 +14,16 @@ class SessionsController < ApplicationController
   	if u != nil && u.authenticate(params[:user][:password])
   		# this saves the session as a cookie
   		session["user_id"] = u.id.to_s
+      session["email"] = u.email.to_s
   		# go to user's cookie
-  		redirect_to user_path(p)
+  		redirect_to root_path
     else 
-      redirect_to user_path
+      redirect_to new_sessions_path
   	end
   end
 
   def destroy
   	session.destroy
-    redirect_to new_sessions_path
+    redirect_to root_path
   end
 end
