@@ -6,6 +6,9 @@ class OrdersController < ApplicationController
   end
 
   def show
+
+  	
+
   end
 
   def edit

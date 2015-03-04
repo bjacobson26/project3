@@ -13,11 +13,17 @@ Rails.application.routes.draw do
   resources :categories
 
   get '/admin' => 'pages#admin'
+  get '/about' => 'pages#about'
+  get '/contact' => 'pages#contact'
 
 
-  get '/categories/furnishings', to: 'categories#show', as: 'furnishings'
-  get '/categories/paintings', to: 'categories#show', as: 'paintings'
-  get '/categories/sculptures', to: 'categories#show', as: 'sculptures'
+  # get '/categories/furnishings', to: 'categories#show', as: 'furnishings'
+  # get '/categories/paintings', to: 'categories#show', as: 'paintings'
+  # get '/categories/sculptures', to: 'categories#show', as: 'sculptures'
+
+  get '/furnishings' => 'categories#furnishings'
+  get '/paintings' => 'categories#paintings'
+  get '/sculptures' => 'categories#sculptures'
 
 
   root 'pages#home'
