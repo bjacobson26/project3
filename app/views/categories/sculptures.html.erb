@@ -1,4 +1,16 @@
 <%= render 'partials/break' %>
-<% @sculptures.each do |sculpture| %>
-	<li><%= sculpture.name %></li>
-<% end %>
+
+
+<div class="container">
+  <div class="row">
+  	<% @sculptures.each do |sculpture| %>
+	  <div class="col-md-4"><%= link_to sculpture.name, product_path(sculpture.id), :class => "title" %><img class="homeproducts" src="assets/Sculpture/ChainedHeart.jpg"><%= link_to "More Info", product_path(sculpture.id), class: 'btn btn-primary', style: "display:block;"%>
+	  </div>
+	  <% end %>
+	</div>
+	
+</div>
+
+<%= render 'partials/break' %>
+<%= render 'partials/break' %>
+<%= render 'partials/break' %>
