@@ -1,6 +1,6 @@
 <h1 class="title"><img class="logo" src="../assets/Logo.psd.png"></h1>
 <div class="signup">
-	<%= form_for @user do |f| %>
+	<%= form_for @user, :url => { :controller => "sessions", :action => "create" } do |f| %>
 		<%= f.text_field :email, :placeholder => "Email", :class => 'textfield' %><br />
 		<%= f.password_field :password, :placeholder => "Password", :class => 'textfield' %><br />
 		<br>

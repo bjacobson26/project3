@@ -11,10 +11,16 @@ class UsersController < ApplicationController
   		# no need for it to be an instance variable (have an @), b/c we're not rendering a view
   	  user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
   	  if user.save
-  	  	  session["user_id"] = user.id.to_s
-  	  	  redirect_to root_path
+          u = User.where(email:params[:user][:email]).first
+  	  	  session["user_id"] = u.id.to_s
+          session["user_email"] = u.email.to_s
+          if u.admin == true
+            redirect_to admin_path
+          else
+  	  	   redirect_to root_path
+          end
   	  	else 
-  	  		render 'new'
+  	  		redirect_to new_sessions_path
   	  end
   end
 
@@ -40,7 +46,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def admin
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name,:password,:password_confirmation,:image,:email, :admin)
   end
 end
 

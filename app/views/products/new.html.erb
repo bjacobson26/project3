@@ -1,2 +1,52 @@
-<h1>Products#new</h1>
+<div class = "container" >
+
+		<h1>Enter Product Info</h1>
+		<!-- f= form -->
+		<%= form_for @product do |f| %>
+			  Name: <%= f.text_field :name %><br>
+			  Price: <%= f.text_field :unit_price %><br>
+			  Description: <%= f.text_field :description %><br>
+			  Material: <%= f.text_field :material %><br>
+			  Specifications:<br>
+			  	Height: <%= f.text_field :height %><br>
+			  	Width: <%= f.text_field :width %><br>
+			  	Depth: <%= f.text_field :depth %><br>
+			  	Weight: <%= f.text_field :weight %><br>
+              Discountinued: <%= f.check_box :is_discontinued %><br>
+              In Stock: <%= f.check_box :in_stock %><br>
+              Is Taxable: <%= f.check_box :is_taxable %><br>
+			  Photo: <%= f.file_field :avatar %><br>
+			  <%= f.submit "Add Product" %>
+		<% end %>
+</div>
+
+
+<%#= image_tag @user.avatar.url %>
+<%#= image_tag @user.avatar.url(:medium) %>
+<%#= image_tag @user.avatar.url(:thumb) %>
+
+
 <p>Find me in app/views/products/new.html.erb</p>
+
+
+    <!-- t.string   "name"
+    t.decimal  "unit_price"
+    t.integer  "quantity"
+    t.boolean  "in_stock"
+    t.text     "description"
+    t.float    "height"
+    t.float    "weight"
+    t.float    "width"
+    t.float    "depth"
+    t.string   "material"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "is_taxable"
+    t.integer  "product_image_id"
+    t.boolean  "indoor"
+    t.integer  "category_id"
+    t.boolean  "is_discontinued"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at" -->

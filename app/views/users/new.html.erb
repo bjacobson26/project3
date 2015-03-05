@@ -9,6 +9,9 @@
 		<%= f.password_field :password, :placeholder => "Password", :class => 'textfield' %><br />
 		<%= f.password_field :password_confirmation, :placeholder => "Confirm password", :class => 'textfield' %><br />
 		<br>
+		<% if current_user_admin %>
+			<p><%=f.check_box :admin %></p>
+		<% end %>
 		<%= f.submit 'Sign up' %>
 	<% end %>
 </div>

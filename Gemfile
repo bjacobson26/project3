@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# paperclip gem
+gem "paperclip", "~> 4.2"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

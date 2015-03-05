@@ -1,10 +1,8 @@
 class SessionsController < ApplicationController
+
   def new
   	# this is user b/c it's a session based on a user logging in
   	@user = User.new
-    if params[:user_created] == 'true'
-      @user_created_message = 'User successfully created!'
-    end
   end
 
   def create
@@ -16,9 +14,13 @@ class SessionsController < ApplicationController
   		session["user_id"] = u.id.to_s
       session["email"] = u.email.to_s
   		# go to user's cookie
-  		redirect_to root_path
-    else 
-      redirect_to new_sessions_path
+      if u.admin == true
+  		  redirect_to admin_path
+      else 
+        redirect_to root_path
+      end
+    else
+       redirect_to new_sessions_path
   	end
   end
 
