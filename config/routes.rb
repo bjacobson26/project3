@@ -17,65 +17,12 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact'
 
 
-  # get '/categories/furnishings', to: 'categories#show', as: 'furnishings'
-  # get '/categories/paintings', to: 'categories#show', as: 'paintings'
-  # get '/categories/sculptures', to: 'categories#show', as: 'sculptures'
-
   get '/furnishings' => 'categories#furnishings'
   get '/paintings' => 'categories#paintings'
   get '/sculptures' => 'categories#sculptures'
 
 
   root 'pages#home'
-
-# get 'pages/home'
-
-#  get 'sessions/new'
-
-#  get 'orders/index'
-
-#  get 'orders/new'
-
-#  get 'orders/show'
-
-#  get 'orders/edit'
-
-#  get 'product_images/index'
-
-#  get 'product_images/new'
-
-#  get 'product_images/show'
-
-#  get 'product_images/edit'
-
-#  get 'products/index'
-
-#  get 'products/new'
-
-#  get 'products/show'
-
-#  get 'products/edit'
-
-#  get 'order_details/new'
-
-#  get 'order_details/show'
-
-#  get 'order_details/edit'
-
-#  get 'categories/new'
-
-#  get 'categories/show'
-
-#  get 'categories/edit'
-
-#  get 'users/index'
-
-
-#  get 'users/new'
-
-#  get 'users/show'
-
-#  get 'users/edit'
 
   
 
