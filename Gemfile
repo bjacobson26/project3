@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 # gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'rails_12factor'
+
 gem 'figaro'
 # stripe
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
