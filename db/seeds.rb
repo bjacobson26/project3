@@ -10,4 +10,4 @@
 	Product.create(name:"lamp", unit_price: 19.99, category_id: 1)
 	Product.create(name:"apple", unit_price: 139.99, category_id: 3)
 
-	User.create(name: "admin", email: "admin@admin.com", admin: true, password: "admin123")
+	User.create(email: "admin@admin.com", admin: true, password: "admin123")
