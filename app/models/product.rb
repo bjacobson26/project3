@@ -13,5 +13,8 @@ class Product < ActiveRecord::Base
     :default_url => "/images/:style/missing.png"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_presence_of :category_id
+ 
+  validates_presence_of :name
 
 end
