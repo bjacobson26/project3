@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
+# gem 'dotenv-rails', :groups => [:development, :test]
 
-
+gem 'figaro'
+# stripe
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use postgresql as the database for Active Record
@@ -33,6 +36,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # paperclip gem
 gem "paperclip", "~> 4.2"
+
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
