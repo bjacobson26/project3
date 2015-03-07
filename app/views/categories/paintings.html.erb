@@ -4,7 +4,8 @@
 <div class="container">
   <div class="row">
   	<% @paintings.each do |painting| %>
-	  <div class="col-md-4"><%= link_to painting.name, product_path(painting.id), :class => "title" %><%= THIS IS WHERE WE ARE STUCK %>'<%= link_to "More Info", product_path(painting.id), class: 'btn btn-primary', style: "display:block;"%>
+	  <div class="col-md-4"><%= link_to painting.name, product_path(painting.id), :class => "title" %>
+        <%= image_tag painting.product_images.last.image.url if painting.product_images.count > 0 %>'<%= link_to "More Info", product_path(painting.id), class: 'btn btn-primary', style: "display:block;"%>
 	  </div>
 	  <% end %>
 	</div>
