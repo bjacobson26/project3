@@ -19,7 +19,7 @@
   <div class="control-group">
     <%= f.label :category_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :category_id, :class => 'number_field' %>
+      <%= f.collection_select :category_id, Category.all, :id, :name %>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
   <div class="control-group">
     <%= f.label :is_taxable, :class => 'control-label' %>
     <div class="controls">
-      <%= f.button :is_taxable, :class => 'check_box_tag' %>
+      <%= f.check_box :is_taxable, :class => 'check_box_tag' %>
     </div>
   </div>
 
@@ -84,27 +84,20 @@
   <div class="control-group">
     <%= f.label :in_stock, :class => 'control-label' %>
     <div class="controls">
-      <%= f.button :in_stock, :class => 'check_box_tag' %>
+      <%= f.check_box :in_stock, :class => 'check_box_tag' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :is_discontinued, :class => 'control-label' %>
   <div class="controls">
-      <%= f.button :is_discontinued, :class => 'check_box_tag' %>
+      <%= f.check_box :is_discontinued, :class => 'check_box_tag' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :pictures, :class => 'control-label' %>
     <div class="controls">
-   
-    <!-- Use HTML5 multiple attribute to enable multiple selection
-      and pass back to controller all files as an array, ready 
-      for paperclip!!
-      file_field_tag, since images is not a gallery attribute
-       -->
-      <%= file_field_tag "images[]", type: :file, multiple: true %>
     </div>
   </div>
 
@@ -113,8 +106,13 @@
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 admin_path, :class => 'btn btn-mini' %>
   </div>
+      <%= f.fields_for :product_images do |pi| %>
+        <%= pi.file_field :image %>
+      <% end %>
 <% end %>
 </div>
+
+    <% end %>
 
 
 <p>Find me in app/views/products/new.html.erb</p>
