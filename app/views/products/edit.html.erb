@@ -1,9 +1,24 @@
+<div class = "container" >
 
-<%= f.file_field :avatar %>
-
-
-<%#= image_tag @user.avatar.url %>
-<%#= image_tag @user.avatar.url(:medium) %>
-<%#= image_tag @user.avatar.url(:thumb) %>
+		<h1>Update Product Info</h1>
+		<!-- f= form -->
+		<%= form_for @product do |f| %>
+			  Name: <%= f.text_field :name %><br />
+              Category ID <%= f.text_field :category_id %><br />
+			  Price: <%= f.text_field :unit_price %>
+              Is Taxable: <%= f.check_box :is_taxable %><br />
+			  Description: <%= f.text_field :description %><br />
+			  Material: <%= f.text_field :material %><br /><br />
+			  Specifications:<br>
+			  	Height: <%= f.text_field :height %><br />
+			  	Width: <%= f.text_field :width %><br />
+			  	Depth: <%= f.text_field :depth %><br />
+			  	Weight: <%= f.text_field :weight %><br />
+              Discountinued: <%= f.check_box :is_discontinued %><br />
+              In Stock: <%= f.check_box :in_stock %><br />
+			  Photo: <%= f.file_field :avatar %><br />
+			  <%= f.submit "Update Product" %>
+		<% end %>
+</div>
 
 <p>Find me in app/views/products/edit.html.erb</p>

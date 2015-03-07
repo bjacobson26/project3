@@ -10,7 +10,7 @@
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
                                         <div class="active item" data-slide-number="0">
-                                        <img src="http://placehold.it/770x300&text=one"></div>
+                                        <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-0" %></div>
 
                                         <div class="item" data-slide-number="1">
                                         <img src="http://placehold.it/770x300&text=two"></div>
@@ -62,19 +62,21 @@
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-0"><img src="http://placehold.it/170x100&text=one"></a>
+                               <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-0" %>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/170x100&text=two"></a>
+                                <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-1" %>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/170x100&text=three"></a>
+                                <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-2" %>
+
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/170x100&text=four"></a>
+                                <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-3" %>
+
                             </li>
 
                         </ul>                 

@@ -13,7 +13,7 @@ class ProductImagesController < ApplicationController
 
   def create
     if current_user_admin
-  	product_image = ProductImage.create(product_image_params)
+  	 product_image = ProductImage.create(product_image_params)
   	else
   		redirect_to root_path
     end
@@ -26,6 +26,6 @@ class ProductImagesController < ApplicationController
   end
 
    def product_image_params
-    params.require(:photo).permit(:image, :photo_date)
+    params.require(:product_image).permit(:image, :photo_date)
    end
 end
