@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # paperclip gem
 gem "paperclip", "~> 4.2"
+gem 'aws-sdk'
 
 
 
