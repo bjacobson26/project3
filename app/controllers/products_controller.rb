@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def create
     if current_user.admin == true
       # no need for it to be an instance variable (have an @), b/c we're not rendering a view
-      product = Product.new(params.require(:product).permit(:name, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable))
+      product = Product.new(params.require(:product).permit(:name, :category_id, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar))
       product.save
       redirect_to admin_path
       # product.user = current_user_admin
@@ -39,6 +39,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:avatar)
+    params.require(:product).permit(:avatar, product_images_attributes: [])
   end
 end
