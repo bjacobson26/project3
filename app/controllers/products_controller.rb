@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.product_images.build
+    @product.product_images.build
+    @product.product_images.build
+
     # if current_user_admin 
     #   @product = Product.new
     # else
@@ -15,7 +19,7 @@ class ProductsController < ApplicationController
   def create
     if current_user.admin == true
       # no need for it to be an instance variable (have an @), b/c we're not rendering a view
-      product = Product.new(params.require(:product).permit(:name, :category_id, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar))
+      product = Product.new(params.require(:product).permit(:name, :category_id, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar, product_images_attributes: [:id, :image]))
       product.save
       redirect_to admin_path
       # product.user = current_user_admin
@@ -39,6 +43,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:avatar, product_images_attributes: [])
+    params.require(:product).permit(:avatar, product_images_attributes: [:id, :image])
   end
 end
