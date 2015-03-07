@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   resources :order_details
   resources :pages
   resource :sessions, only: [:new, :create, :destroy]
+  resources :charges
   # Establish a nested route with product_images inside of products
   resources :products do 
     resources :product_images 
   end
 
   resources :categories
+
+  post '/charge' => 'charges#create'
 
   get '/admin' => 'pages#admin'
   get '/about' => 'pages#about'

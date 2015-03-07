@@ -1,4 +1,11 @@
+<% if current_user == nil || current_user.admin == false %>
+    <h1 style="color:red; text-align:center;"> ACCESS DENIED: Login as admin to render view </h1>
+    <img style="display:block; margin: auto;"src="http://stream1.gifsoup.com/view6/2662404/you-didnt-say-the-magic-word-o.gif" />
+<% else %>
+
+
 <div class = "container" >
+
 
   <h1>Enter Product Info</h1>
     <%= form_for @product, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
@@ -51,6 +58,7 @@
     <%= f.text_field :height, :class => 'text_field' %>
     </div>
   </div>
+
 
   <div class="control-group">
     <%= f.label :width, :class => 'control-label' %>
