@@ -10,7 +10,7 @@
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
                                         <div class="active item" data-slide-number="0">
-                                        <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-0" %></div>
+                                        <%= image_tag @product.product_images.first.image(:medium), :class=> "thumbnail", :id => "carousel-selector-0" %></div>
 
                                         <div class="item" data-slide-number="1">
                                         <img src="http://placehold.it/770x300&text=two"></div>
@@ -62,7 +62,7 @@
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
                             <li class="col-sm-2">
-                               <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-0" %>
+                               <%= image_tag @product.product_images.first.image(:small), :class=> "thumbnail", :id => "carousel-selector-0" %>
                             </li>
 
                             <li class="col-sm-2">

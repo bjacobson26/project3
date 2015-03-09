@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
   	<% @furnishings.each do |furnishing| %>
-	  <div class="col-md-4"><%= link_to furnishing.name, product_path(furnishing.id), :class => "title" %><img class="homeproducts" src="assets/Furniture/CIMG1421.JPG"><%= link_to "More Info", product_path(furnishing.id), class: 'btn btn-primary', style: "display:block;"%>
+	  <div class="col-md-4"><%= link_to furnishing.name, product_path(furnishing.id), :class => "title" %><%= image_tag furnishing.product_images.first.image, :class=>"catimages" %><%= link_to "More Info", product_path(furnishing.id), class: 'btn btn-primary', style: "display:block;"%>
 	  </div>
 	  <% end %>
 	</div>
