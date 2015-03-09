@@ -36,7 +36,18 @@ margin-top:20px;
 img.catimages {
   vertical-align: middle;
   max-height: 202px;
-  display:block;
-  margin:auto;
+  display: block;
+  margin: auto;
   min-width: 360px;
+  border: 4px solid black;
+  border-radius: 30px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #428bca;
+  border-color: #357ebd;
+  width: 10em;
+  margin: auto;
+  margin-top: 1%;
 }
