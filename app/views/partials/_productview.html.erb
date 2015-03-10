@@ -13,13 +13,10 @@
                                         <%= image_tag @product.product_images.first.image(:medium), :class=> "thumbnail", :id => "carousel-selector-0" %></div>
 
                                         <div class="item" data-slide-number="1">
-                                        <img src="http://placehold.it/770x300&text=two"></div>
+                                          <%= image_tag @product.product_images.second.image(:medium), :class=> "thumbnail", :id => "carousel-selector-1" %></div>
 
                                         <div class="item" data-slide-number="2">
-                                        <img src="http://placehold.it/770x300&text=three"></div>
-
-                                        <div class="item" data-slide-number="3">
-                                        <img src="http://placehold.it/770x300&text=four"></div>
+                                          <%= image_tag @product.product_images.last.image(:medium), :class=> "thumbnail", :id => "carousel-selector-2" %></div>
 
 
                                         
@@ -36,9 +33,9 @@
                             <div class="col-sm-4" id="carousel-text"></div>
 
                             <div>
-                                <div>
+                                <div class="productview">
                                     <h2><%= @product.name %></h2>
-                                    <p>Description of the product</p>
+                                    <p><%= @product.description %></p>
                                     <p> $<%= @product.unit_price %></p>
                                     <p>Local pick-up only</p>
                                     <!-- stripe -->
@@ -66,16 +63,11 @@
                             </li>
 
                             <li class="col-sm-2">
-                                <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-1" %>
+                              <%= image_tag @product.product_images.second.image(:small), :class=> "thumbnail", :id => "carousel-selector-1" %>
                             </li>
 
                             <li class="col-sm-2">
-                                <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-2" %>
-
-                            </li>
-
-                            <li class="col-sm-2">
-                                <%= image_tag @product.avatar.url(:medium), :class=> "thumbnail", :id => "carousel-selector-3" %>
+                              <%= image_tag @product.product_images.last.image(:small), :class=> "thumbnail", :id => "carousel-selector-2" %>
 
                             </li>
 

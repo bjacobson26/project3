@@ -10,7 +10,33 @@ $mainfont:'IM Fell French Canon SC', serif;
     max-height:500px;
 }
 
+.adminlinks {
+  color:black;
+  display:block;
+  margin-top: 15px;
+  margin:auto;
+  text-align:center;
+  font-size: 30px;
+  border: 2px solid black;
+  width: 236px;
+  border-radius: 21px;
+  font-family:$mainfont;
+}
+.adminlinks:hover {
+  background-color: lightskyblue;
+  text-decoration: none;
+  color:black;
+}
 
+.admintitle {
+  display:block;
+  text-align:center;
+  font-family: $mainfont;
+  color:black;
+  font-size: 40px;
+  margin-bottom: 32px;
+
+}
 
 .carousel {
 	height: 50%;
@@ -91,3 +117,39 @@ $mainfont:'IM Fell French Canon SC', serif;
   clear: both;
 }
 
+.socialmediabar {
+  width:140px;
+  position:relative;
+  margin: auto;
+}
+
+
+
+.facebook {
+  float:left;
+  height: 65px;
+  width: 65px;
+  background-image: url("../assets/social_media_buttons/facebook-grey.png");
+  background-repeat: no-repeat;
+  background-size: 65px;
+
+}
+.facebook:hover {
+  background-image: url("../assets/social_media_buttons/facebook.png");
+}
+
+.instagram {
+  float: right;
+  margin-left:4px;
+  margin-top: -3px;
+  height: 70px;
+  width: 70px;
+  background-image: url("../assets/social_media_buttons/instagram-grey.png");
+  background-repeat: no-repeat;
+  background-size: 70px;
+
+
+}
+.instagram:hover {
+  background-image: url("../assets/social_media_buttons/instagram.png");
+}

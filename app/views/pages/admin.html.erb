@@ -8,12 +8,22 @@
 	<br>
 	<br>
 	<br>
-	<h1> THIS IS THE ADMIN VIEW </h1>
-	<p>Find me in views/pages/admin.html.erb</p><br><br><br>
+	<h1 class="admintitle"> Hello Scott! </h1>
 
-	<%= link_to 'Homepage', root_path %><br>
-	<%= link_to 'View Orders', orders_path %><br>
-	<%= link_to 'View Users', users_path %><br>
-	<%= link_to 'Add Product', new_product_path %><br>
+
+	<%= link_to 'Homepage', root_path, :class=>"adminlinks" %><br>
+	<%= link_to 'View Orders', orders_path, :class=>"adminlinks" %><br>
+	<%= link_to 'View Users', users_path, :class=>"adminlinks" %><br>
+	<%= link_to 'Add Product', new_product_path, :class => "adminlinks" %><br>
 <% end %>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>Find me in views/pages/admin.html.erb</p><br><br><br>
 
