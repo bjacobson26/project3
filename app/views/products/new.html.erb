@@ -3,11 +3,8 @@
     <img style="display:block; margin: auto;"src="http://stream1.gifsoup.com/view6/2662404/you-didnt-say-the-magic-word-o.gif" />
 <% else %>
 
-
-<div class = "container" >
-
-
-  <h1>Enter Product Info</h1>
+    <h1 class="admintitle">Enter Product Info</h1>
+<div class = "productcontainer" >
     <%= form_for @product, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
@@ -26,8 +23,7 @@
   <div class="control-group">
     <%= f.label :unit_price, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :unit_price, :class => 'text_field',
-       :value => (number_with_precision(:unit_price, :precision => 2) || 0) %>
+      <%= f.text_field :unit_price, :class => 'text_field' %>
     </div>
   </div>
 
@@ -102,11 +98,11 @@
   </div>
 
       <%= f.fields_for :product_images do |pi| %>
-        <%= pi.file_field :image %>
+        <%= pi.file_field :image, :class=>"imagefield" %>
       <% end %>
 
       <div class="form-actions"><br>
-        <%= f.submit 'Create Product', :class => 'btn btn-primary' %>
+        <%= f.submit 'Create Product', :class => 'btn btn-primary' %><br>
         <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                     admin_path, :class => 'btn btn-mini' %>
       </div>

@@ -6,7 +6,29 @@
 
 <% else %>
 
-<h1>Orders#index</h1>
+
+    <h1 class="admintitle">All Orders</h1>
+
+    <h1 class="admintitle">Total Orders: <%= @orders.count %></h1>
+
+    <%= @orders.each do |order| %>
+        <li class="users"> <span class="bold">Order ID:</span> <%= order.id  %> </li>
+        <li class="users"> <span class="bold">User ID:</span> <%= order.user_id  %> </li>
+        <li class="users"> <span class="bold">Date:</span> <%= order.order_date %> </li>
+        <li class="users"> <span class="bold">Subtotal:</span> <%= order.subtotal %> </li>
+        <li class="users"> <span class="bold">Shipping:</span> <%= order.shipping_price %> </li>
+        <li class="users"> <span class="bold">Total:</span> <%= order.total  %> </li>
+        <li class="users"> <span class="bold">Completed:</span> <%= order.is_completed  %> </li>
+        <li class="users"> <span class="bold">Tracking Number:</span> <%= order.tracking_number %> </li>
+        <li class="users"> <span class="bold">Created At:</span> <%= order.created_at  %> </li>
+        <br>
+        <br>
+
+
+    <% end %>
+
+
+
 <p>Find me in app/views/orders/index.html.erb</p>
 
 <% end %>

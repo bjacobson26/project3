@@ -33,6 +33,13 @@ margin-top:20px;
   line-height: 1;
 }
 
+.likebutton {
+  position: relative;
+  text-align: center;
+  margin-top: -4%;
+  margin-bottom: 3%;
+}
+
 img.catimages {
   vertical-align: middle;
   max-height: 202px;
@@ -50,4 +57,26 @@ img.catimages {
   width: 10em;
   margin: auto;
   margin-top: 1%;
+}
+
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.428571429;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-left: 75%;
+}
+
+element.style {
+  vertical-align: bottom;
+  width: 450px;
+  height: 20px;
+  margin: -22px;
+  display: block;
 }

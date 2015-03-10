@@ -3,10 +3,29 @@
 	<img style="display:block; margin: auto;"src="http://stream1.gifsoup.com/view6/2662404/you-didnt-say-the-magic-word-o.gif" />
 <% else %>
 
-<h1>All Users</h1>
+<h1 class="admintitle">All Users</h1>
 
-<%= @users.each do |user| %>
-<li> <%= user.inspect %> </li>
-<% end %>
+<h1 class="admintitle">Total Users: <%= @users.count %></h1>
+
+  <div>
+    <%= @users.each do |user| %>
+        <li class="users"> <span class="bold">ID:</span> <%= user.id  %> </li>
+        <li class="users"> <span class="bold">First Name:</span> <%= user.first_name %> </li>
+        <li class="users"> <span class="bold">Last Name:</span> <%= user.last_name %> </li>
+        <li class="users"> <span class="bold">Email:</span> <%= user.email  %> </li>
+        <li class="users"> <span class="bold">Phone:</span> <%= user.phone  %> </li>
+        <li class="users"> <span class="bold">Address 1:</span> <%= user.address1 %> </li>
+        <li class="users"> <span class="bold">Address 2:</span> <%= user.address2  %> </li>
+        <li class="users"> <span class="bold">City:</span> <%= user.city %> </li>
+        <li class="users"> <span class="bold">State:</span> <%= user.state %> </li>
+        <li class="users"> <span class="bold">Zipcode:</span> <%= user.zipcode %> </li>
+        <li class="users"> <span class="bold">State:</span> <%= user.state %> </li>
+        <li class="users"> <span class="bold">Created at:</span> <%= user.created_at %> </li>
+        <li class="users"> <span class="bold">Updated at:</span> <%= user.updated_at %> </li>
+        <br>
+        <br>
+    <% end %>
+  </div>
+
 
 <% end %>
