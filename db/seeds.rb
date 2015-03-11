@@ -11,3 +11,7 @@
 	# Product.create(name:"apple", unit_price: 139.99, category_id: 3)
 
 	User.create(email: "admin@admin.com", admin: true, password: "admin123")
+
+  Category.create(name:"furnishing")
+  Category.create(name:"painting")
+  Category.create(name:"sculpture")
