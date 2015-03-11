@@ -1,7 +1,11 @@
 <%= render 'partials/break' %>
+
+<% if @product.category_id != 2 %>
 <%= render 'partials/productview' %>
 
-
+<% else %>
+<%= render 'partials/paintingview' %>
+<% end %>
 
 <%= render 'partials/break' %>
 <%= render 'partials/break' %>

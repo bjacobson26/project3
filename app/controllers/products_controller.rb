@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
   def create
     if current_user.admin == true
-      product = Product.new(params.require(:product).permit(:name, :category_id, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar, product_images_attributes: [:id, :image]))
+      product = Product.new(params.require(:product).permit(:name, :category_id, :description, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar, product_images_attributes: [:id, :image]))
       product.save
       redirect_to admin_path
     else
