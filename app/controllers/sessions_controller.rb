@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
       end
     else
        redirect_to new_sessions_path
+       flash[:notice] = "Sorry, your username or password is incorrect."
   	end
   end
 
