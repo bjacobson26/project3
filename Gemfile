@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 gem 'rails_12factor'
 
+gem 'sidekiq'
+
 gem 'figaro'
 # stripe
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
@@ -41,6 +43,11 @@ gem "paperclip", "~> 4.2"
 
 gem 'aws-sdk', '< 2.0'
 
+gem 'sinatra', :require => nil
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
 
 
 # Use unicorn as the app server

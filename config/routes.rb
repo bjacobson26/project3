@@ -1,4 +1,11 @@
+Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+
+
 Rails.application.routes.draw do
+
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
 
   resources :users #, only: [:index, :new, :create, :show, :edit]
   resources :orders
@@ -11,7 +18,11 @@ Rails.application.routes.draw do
     resources :product_images 
   end
 
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :categories
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 
   post '/charge' => 'charges#create'
 

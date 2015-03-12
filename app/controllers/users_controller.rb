@@ -8,13 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
-  		# no need for it to be an instance variable (have an @), b/c we're not rendering a view
-  	  user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
-  	  if user.save
+  	  @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
+
+      if @user.save
+          UserMailer.welcome(@user.id).deliver
           u = User.where(email:params[:user][:email]).first
   	  	  session["user_id"] = u.id.to_s
           session["user_email"] = u.email.to_s
-          if u.admin == true
+          if u.admin
             redirect_to admin_path
           else
   	  	   redirect_to root_path
