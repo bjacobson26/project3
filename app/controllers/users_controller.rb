@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
   def create
   	  @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
-
+      puts User.count
       if @user.save
+          puts User.count
           UserMailer.welcome(@user.id).deliver
           u = User.where(email:params[:user][:email]).first
   	  	  session["user_id"] = u.id.to_s
