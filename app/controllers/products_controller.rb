@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   def index
   	@products = Product.all
     @product_images = ProductImage.all
-    render json: @products
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @products }
+    end
   end
 
   def new

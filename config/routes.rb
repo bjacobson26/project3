@@ -4,7 +4,6 @@ Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 Rails.application.routes.draw do
 
   get 'password_resets/new'
-
   get 'password_resets/edit'
 
   resources :users #, only: [:index, :new, :create, :show, :edit]
@@ -34,6 +33,7 @@ Rails.application.routes.draw do
   get '/furnishings' => 'categories#furnishings'
   get '/paintings' => 'categories#paintings'
   get '/sculptures' => 'categories#sculptures'
+
   
 
   root 'pages#home'
