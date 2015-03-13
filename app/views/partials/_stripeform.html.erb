@@ -1,0 +1,32 @@
+<h1>Purchase <%= @product.name %></h1>
+<form action="/orders" method="POST" id="payment-form">
+
+  <span class="payment-errors"></span>
+  <div class="form-row">
+
+    <label>
+      <input type="text" size="20" data-stripe="number" placeholder="Card Number"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <input type="text" size="4" data-stripe="cvc" placeholder="CVC"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Expiration: </span>
+      <input type="text" size="3" data-stripe="exp-month" placeholder="MM"/>
+    </label>
+    <span> / </span>
+    <input type="text" size="5" data-stripe="exp-year" placeholder="YYYY"/>
+    <input type="hidden" name="product_id" id="product_id" value="<%= @product.id %>"/>
+  </div>
+
+  <%= button_to 'Submit Payment', :class=>'btn btn-modal', :type=>'submit'  %>
+
+
+  <img class="stripelogo" src="http://www.bentzdeyo.com/wp-content/uploads/2014/09/Powered-By-Stripe.png" />
+</form>

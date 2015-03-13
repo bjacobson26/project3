@@ -1,0 +1,38 @@
+<h1>Purchase <%= @product.name %></h1>
+
+<%= form_for @order, url: {action: "create"}, html: {class: "form"} do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :body, size: "60x12" %>
+    <%= f.submit "Create" %>
+<% end %>
+
+<form action="" method="PATCH" id="payment-form">
+
+  <span class="payment-errors"></span>
+  <div class="form-row">
+
+    <label>
+      <input type="text" size="20" data-stripe="number" placeholder="Card Number"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <input type="text" size="4" data-stripe="cvc" placeholder="CVC"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Expiration: </span>
+      <input type="text" size="3" data-stripe="exp-month" placeholder="MM"/>
+    </label>
+    <span> / </span>
+    <input type="text" size="5" data-stripe="exp-year" placeholder="YYYY"/>
+  </div>
+
+  <%= button_to 'Submit Payment', :class=>'btn btn-modal', :type=>'submit'  %>
+
+
+  <img class="stripelogo" src="http://www.bentzdeyo.com/wp-content/uploads/2014/09/Powered-By-Stripe.png" />
+</form>

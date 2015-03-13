@@ -9,17 +9,12 @@
         <p><%= @product.description %></p>
         <p> $<%= @product.unit_price %></p>
         <p>Local pick-up only</p>
-        <!-- stripe -->
-        <form action="/charge" method="POST">
-          <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_8jnQ29FOBt5xe6QhjOeoukkV"
-          data-name="Buy <%= @product.name %>"
-          data-description="<%=@product.description%>"
-          data-amount="<%=@product.unit_price * 100%>">
-          </script>
-        </form>
-        <!-- end stripe -->
+
+        <% if current_user.present? %>
+            <%= render 'partials/purchasebutton' %>
+            <% elsif current_user == nil %>
+            <%= render 'partials/purchasebuttonlogin' %>
+        <% end %>
       </div>
     </div>
 </div>

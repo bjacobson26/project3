@@ -1,4 +1,4 @@
-<% if current_user == nil || current_user.admin == false %>
+<% if current_user == nil || current_user.admin != true %>
 
 <h1 style="color:red; text-align:center;"> ACCESS DENIED: Login as admin to render view </h1>
 <img style="display:block; margin: auto;"src="http://stream1.gifsoup.com/view6/2662404/you-didnt-say-the-magic-word-o.gif" />
@@ -14,12 +14,10 @@
     <%= @orders.each do |order| %>
         <li class="users"> <span class="bold">Order ID:</span> <%= order.id  %> </li>
         <li class="users"> <span class="bold">User ID:</span> <%= order.user_id  %> </li>
-        <li class="users"> <span class="bold">Date:</span> <%= order.order_date %> </li>
-        <li class="users"> <span class="bold">Subtotal:</span> <%= order.subtotal %> </li>
-        <li class="users"> <span class="bold">Shipping:</span> <%= order.shipping_price %> </li>
-        <li class="users"> <span class="bold">Total:</span> <%= order.total  %> </li>
-        <li class="users"> <span class="bold">Completed:</span> <%= order.is_completed  %> </li>
-        <li class="users"> <span class="bold">Tracking Number:</span> <%= order.tracking_number %> </li>
+        <li class="users"> <span class="bold">Customer Name:</span> <%= order.user.first_name + " " + order.user.last_name %> </li>
+        <li class="users"> <span class="bold">Product:</span> <%= order.product.name  %> </li>
+        <li class="users"> <span class="bold">Price:</span> $<%= order.product.unit_price  %> </li>
+        <li class="users"> <span class="bold">Customer Email:</span> <%= order.user.email  %> </li>
         <li class="users"> <span class="bold">Created At:</span> <%= order.created_at  %> </li>
         <br>
         <br>
