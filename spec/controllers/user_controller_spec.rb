@@ -4,19 +4,19 @@ require 'rails_helper'
 #### 18 PENDING TESTS
 describe UsersController do
 
-  # let :valid_attributes do 
-  #   {
-  #     first_name: "firstname",
-  #     last_name: "lastname",
-  #     email: "example@email.com"
-  #   }
-  # end
+  let :valid_attributes do 
+    {
+      first_name: "firstname",
+      last_name: "lastname",
+      email: "example@email.com",
+      password: "password"
+    }
+  end
 
   before(:each) do
     
     @user1 = User.create(first_name:"Colonel", last_name:"Mustard", email:"yellowstuff@gmail.com", password:"Guldens")
-    
-    # @user1 = User.create valid_attributes
+    @user1 = User.create valid_attributes
     # @user2 = User.create(first_name: "Admin", last_name:"admin", admin: true, email:"admin@admin.com")
   end
 # ==========================================
@@ -32,7 +32,8 @@ describe UsersController do
 # ==========================================
   describe "GET #show" do
     before(:each) do
-      puts @user1.errors.inspect
+      # See what validations didn't succeed 
+      # puts @user1.errors.inspect
       get :show, id: @user1.id
     end
     it "renders the show template and should be http status 200" do 
@@ -55,7 +56,13 @@ describe UsersController do
   end
 # ==========================================
   describe "POST #create" do
-    it "persists an item to the DB"
+    before(:each) do
+      get :create, user: 
+    end
+    it "persists an item to the DB" do
+      #expect {User.create}.to change(User, :count).by(1)
+      #expect {post :create, user: valid_attributes}.to change(User, :count).by(1)
+    end
   end
 # ==========================================
   describe "GET #edit" do
