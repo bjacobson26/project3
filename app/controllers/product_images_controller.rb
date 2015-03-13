@@ -25,7 +25,14 @@ class ProductImagesController < ApplicationController
   def edit
   end
 
-   def product_image_params
+  def destory
+    product_image = product_image.where(id: params[:id]).first
+    product_image.destroy
+  end
+
+  private 
+    def product_image_params
     params.require(:product_image).permit(:image, :photo_date)
-   end
+  end
+
 end
