@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
   	@products = Product.all
+    @product_images = ProductImage.all
   end
 
   def new
@@ -26,6 +27,20 @@ class ProductsController < ApplicationController
 
 
   def edit
+    @product = Product.find(params[:id])
+    (3- @product.product_images.count).times do 
+      @product.product_images.build
+    end
+  end
+
+  def update
+    if current_user.admin == true
+    @product = Product.find(params[:id])
+    @product.update_attributes(params.require(:product).permit(:name, :category_id, :description, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar, product_images_attributes: [:id, :image]))
+      redirect_to product_path
+    else 
+      render 'edit'
+    end
   end
 
   def product_params
