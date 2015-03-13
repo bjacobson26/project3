@@ -1,24 +1,120 @@
-<div class = "container" >
+<% if current_user == nil || current_user.admin == false %>
+    <h1 style="color:red; text-align:center;"> ACCESS DENIED: Login as admin to render view </h1>
+    <img style="display:block; margin: auto;"src="http://stream1.gifsoup.com/view6/2662404/you-didnt-say-the-magic-word-o.gif" />
+<% else %>
 
-		<h1>Update Product Info</h1>
-		<!-- f= form -->
-		<%= form_for @product do |f| %>
-			  Name: <%= f.text_field :name %><br />
-              Category ID <%= f.text_field :category_id %><br />
-			  Price: <%= f.text_field :unit_price %>
-              Is Taxable: <%= f.check_box :is_taxable %><br />
-			  Description: <%= f.text_field :description %><br />
-			  Material: <%= f.text_field :material %><br /><br />
-			  Specifications:<br>
-			  	Height: <%= f.text_field :height %><br />
-			  	Width: <%= f.text_field :width %><br />
-			  	Depth: <%= f.text_field :depth %><br />
-			  	Weight: <%= f.text_field :weight %><br />
-              Discountinued: <%= f.check_box :is_discontinued %><br />
-              In Stock: <%= f.check_box :in_stock %><br />
-			  Photo: <%= f.file_field :avatar %><br />
-			  <%= f.submit "Update Product" %>
-		<% end %>
+    <h1 class="admintitle">Update Product Info</h1>
+<div class = "productcontainer" >
+    <%= form_for @product, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :category_id, Category.all, :id, :name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :unit_price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :unit_price, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :is_taxable, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :is_taxable, :class => 'check_box_tag' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :material, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :material, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :height, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :height, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :width, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :width, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :depth, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :depth, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :weight, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :weight, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :in_stock, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :in_stock, :class => 'check_box_tag' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :is_discontinued, :class => 'control-label' %>
+  <div class="controls">
+      <%= f.check_box :is_discontinued, :class => 'check_box_tag' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :pictures, :class => 'control-label' %>
+    <div class="controls">
+    </div>
+  </div>
+
+      <%= f.fields_for :product_images do |pi| %>
+        <%= pi.file_field :image, :class=>"imagefield" %>
+        <%= image_tag pi.object.image.url(:medium) if pi.object.image != nil %>
+      <% end %>
+
+      <div class="form-actions"><br>
+        <%= f.submit 'Update Product', :class => 'btn btn-primary' %><br>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                    admin_path, :class => 'btn btn-mini' %>
+      </div>
+
+<% end %>
 </div>
 
+    <% end %>
+
+<br>
 <p>Find me in app/views/products/edit.html.erb</p>
+
+
+

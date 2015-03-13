@@ -1,5 +1,32 @@
+<div class="productcontainer">
+<h1 class="admintitle">Products List</h1>
 <% @products.each do |p| %>
-	<li><%= p.name %></li>
-	<li><%= p.unit_price %></li>
-	<li><%= p.category_id %></li>
+	<% p.product_images.each do |pi| %>
+		<%= image_tag pi.image.url(:medium) if pi.image != nil %>
+	<% end %>
+
+	<li>Product Name: <%= p.name %></li>
+	<li>Product Id: <%=p.id %></li>
+	<li>Price: <%= p.unit_price %></li>
+	<li>Taxable?: <%= p.is_taxable %></li>
+	<li>Category: <%= p.category_id %></li>
+	<li>In Stock: <%= p.in_stock %></li>
+	<li>Description: <%= p.description %></li>
+	<li>Height: <%= p.height %></li>
+	<li>Width: <%= p.width %></li>
+	<li>Weight: <%= p.weight %></li>
+	<li>Depth: <%= p.depth %></li>
+	<li>Material: <%= p.material %></li>
+	<li>Discontinued: <%= p.is_discontinued %></li>
+
+</br>
+<%=  link_to "Edit Product Info", edit_product_path(p.id) %>
+</br>
+</br>
+</br>
+</br>
+</br>
 <% end %>
+
+<%= link_to "Add New Product", new_product_path %>
+</div>
