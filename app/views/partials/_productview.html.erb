@@ -40,7 +40,11 @@
                                     <p>Local pick-up only</p>
 
 
-                                  <%= render 'partials/stripeform' %>
+                                  <% if current_user.present? %>
+                                      <%= render 'partials/purchasebutton' %>
+                                  <% elsif current_user == nil %>
+                                      <%= render 'partials/purchasebuttonlogin' %>
+                                  <% end %>
 
                                 </div>
                             </div>
