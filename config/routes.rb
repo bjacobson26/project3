@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/furnishings' => 'categories#furnishings'
   get '/paintings' => 'categories#paintings'
   get '/sculptures' => 'categories#sculptures'
-
+  
 
   root 'pages#home'
 
