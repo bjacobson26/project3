@@ -28,3 +28,15 @@ $mainfont:'IM Fell French Canon SC', serif;
   font-family: $mainfont;
   font-size:50px;
 }
+
+input[type="submit"] {
+  color: whitesmoke;
+  background-color: #159CD8;
+  border: 1px solid grey;
+  border-radius: 6px;
+  height: 37px;
+  margin-top: 11px;
+}
+input[type="submit"]:hover {
+  background-color: #006BB5;
+}

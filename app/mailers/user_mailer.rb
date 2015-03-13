@@ -27,4 +27,13 @@ class UserMailer < ActionMailer::Base
     @email = @user.email
     mail to: @email, subject: "Password reset"
   end
+
+  def order_confirmation(user_id, order_id)
+    @user = User.find(user_id)
+    @order = Order.find(order_id)
+    @email = @user.email
+
+    mail to: @email, subject: "Order Confirmation"
+  end
+
 end

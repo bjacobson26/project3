@@ -34,6 +34,9 @@ class ProductsController < ApplicationController
   end
 
   def update
+    puts "========================================================================"
+    puts "update action"
+    puts "========================================================================"
     if current_user.admin == true
     @product = Product.find(params[:id])
     @product.update_attributes(params.require(:product).permit(:name, :category_id, :description, :unit_price, :height, :width, :depth, :weight, :material, :is_discontinued, :in_stock, :is_taxable, :avatar, product_images_attributes: [:id, :image]))

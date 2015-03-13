@@ -1,0 +1,20 @@
+<h1>Hello <%= @user.first_name %>!</h1>
+<br>
+<p>Thank you for your recent purchase from ScottMeskillDesigns.com.</p>
+<p>Here is your order summary: </p>
+<ul>
+  <h1>Order Summary</h1>
+  <li> Item: <%= @order.product.name %></li>
+  <li> Price: <%= @order.product.unit_price %></li>
+  <li> Description: <%= @order.product.description %></li>
+  <li> Order Date: <%= @order.created_at.localtime %></li>
+</ul>
+
+<p>As soon as your order is received, we will be in contact with you to discuss pick up or shipping options. Thank you for your patience.</p>
+<p>If there are any errors with this order, please contact Scott at scottmeskilldesignswebsite@gmail.com </p>
+<p>Thank you for your business and have a wonderful day! </p>
+<p> - Scott Meskill Designs
+
+<p><a href="https://scottmeskilldesigns.herokuapp.com/sessions/new">Login</a><br>
+<br>
+<p>Created by B.A.D. Designs </p>

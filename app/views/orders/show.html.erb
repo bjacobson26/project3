@@ -1,2 +1,19 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<% if current_user != nil && (current_user.email == @order.user.email || current_user.admin = true)  %>
+
+<div class="ordershow">
+  <h1 class="admintitle">Thank you <%= @order.user.first_name %>!</h1>
+  <h2 class="receipt">A receipt has been sent to <%= @order.user.email %> </h2>
+  <br>
+
+  <p class="purchased">You have purchased a new "<%= @order.product.name %>" for $<%= @order.product.unit_price.round %></p>
+    <%= image_tag @order.product.product_images.first.image, :class=>'orderpic' %>
+
+
+
+  <h1 class="admintitle"><%= link_to 'Back to Homepage', root_path %></h1>
+</div>
+<% else %>
+    <h1 style="color:red; text-align:center;"> ACCESS DENIED: Login as admin to render view </h1>
+    <img style="display:block; margin: auto;"src="http://stream1.gifsoup.com/view6/2662404/you-didnt-say-the-magic-word-o.gif" />
+<% end %>
+

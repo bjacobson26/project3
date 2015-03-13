@@ -72,6 +72,21 @@ img.catimages {
   transition: all 0.2s ease-in-out;
   margin-left: 75%;
 }
+button.btn.btn-modal {
+  background: lightblue;
+  margin-top: 4%;
+}
+button.btn.btn-modal:hover {
+  background: skyblue;
+}
+img.stripelogo {
+  margin-left: 42%;
+  margin-bottom: -15%;
+  margin-top: -21%;
+}
+
+
+
 
 element.style {
   vertical-align: bottom;
@@ -84,3 +99,15 @@ element.style {
 .centeralign {
   text-align: center;
 }
+
+.btn-primary {
+  color: white;
+  background-color: #428bca;
+  border-color: #357ebd;
+  width: 8em;
+  margin: auto;
+  margin-top: 1%;
+  text-align:center;
+}
+
+
