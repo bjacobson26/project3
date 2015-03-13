@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   def index
   	@products = Product.all
     @product_images = ProductImage.all
+    render json: @products
   end
 
   def new
