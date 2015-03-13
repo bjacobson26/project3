@@ -2,9 +2,14 @@ class ChargesController < ApplicationController
 	def new
 	end
 
+
+
 	def create
 	  # Amount in cents
-	  @amount = @product.unit_price
+    Stripe.api_key = ENV['STRIPE_API_KEY']
+
+    @amount
+
 
 	  customer = Stripe::Customer.create(
 	    :email => 'example@stripe.com',
