@@ -57,23 +57,34 @@ describe UsersController do
 # ==========================================
   describe "POST #create" do
     before(:each) do
-      get :create, user: 
+      User.destroy_all
+      @user_count = User.count
+      get :create, {user:{first_name: "firstname", last_name: "lastname", email: "example@email.com", password: "password"}}
     end
     it "persists an item to the DB" do
-      #expect {User.create}.to change(User, :count).by(1)
-      #expect {post :create, user: valid_attributes}.to change(User, :count).by(1)
+      expect(User.count).to eq(@user_count + 1)
     end
   end
 # ==========================================
   describe "GET #edit" do
-    it "renders the edit template with status 200"
-    it "should assign the item to @item"
+    before(:each) do
+      get :edit, {id: @user1.id, first_name: "firstname2", last_name: "lastname2"}
+    end
+    it "renders the new template with status 200" do
+      expect(response).to have_http_status(200)
+    end
   end
 # ==========================================
   describe "PUT/PATCH #update" do
-    describe "with successful update" do
-      it "should update the item record in the database"
-      it "redirect to the show path for this item"
+    context "with valid attributes" do
+      before(:each) do
+        get :update, {user: {id: @user1.id, first_name: "firstname2", last_name: "lastname2"}}
+      end
+      it "should update the user so first and last name are changed" do
+        expect(@user1.first_name).to eq("firstname2")
+      end
+    end
+    it "redirects to the show path for this item" do
     end
 
     describe "with unsuccessful update" do
