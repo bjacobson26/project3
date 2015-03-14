@@ -74,30 +74,4 @@ describe UsersController do
       expect(response).to have_http_status(200)
     end
   end
-# ==========================================
-  describe "PUT/PATCH #update" do
-    context "with valid attributes" do
-      before(:each) do
-        get :update, {user: {id: @user1.id, first_name: "firstname2", last_name: "lastname2"}}
-      end
-      it "should update the user so first and last name are changed" do
-        expect(@user1.first_name).to eq("firstname2")
-      end
-    end
-    it "redirects to the show path for this item" do
-    end
-
-    describe "with unsuccessful update" do
-      describe "should not update the item record in the database" do
-        it "if the item qty to 0"
-        it "if the item name is nil"
-        it "should redirect to the edit view template"
-      end
-    end
-  end
-# ==========================================
-  describe "DELETE #destroy" do
-    it "deletes an item from the DB"
-    it "redirects to index page"
-  end
 end
