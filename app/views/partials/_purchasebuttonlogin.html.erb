@@ -12,7 +12,7 @@
         <h4 class="modal-title" id="myModalLabel">Hello Stranger!</h4>
       </div>
       <div class="modal-body">
-            In order to purchase this item, please click <%= link_to 'here', new_sessions_path %> to create and account. After you create an account, you can come back here I wont give you this annoying message! :)
+            In order to purchase this item, please <%= link_to 'login', new_sessions_path %> or <%= link_to 'create an account', new_user_path %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
