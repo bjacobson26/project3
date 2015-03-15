@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       UserMailer.order_confirmation(@user.id, @order.id).deliver
 
 
-      flash[:notice] = "Order successfully created"
+      # flash[:notice] = "Order successfully created"
 
       Stripe.api_key = ENV['STRIPE_API_KEY']
 
