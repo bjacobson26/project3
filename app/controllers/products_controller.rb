@@ -51,6 +51,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product.destroy
+    redirect_to product_path
+  end
+
   def product_params
     params.require(:product).permit(:avatar, product_images_attributes: [:id, :image])
   end
